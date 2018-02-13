@@ -26,8 +26,8 @@ namespace Notestash.Models
                 tblUser objTblUser = new tblUser();
                 objTblUser.Id = objUser.Id;
                 objTblUser.FullName = objUser.FullName;
-                objTblUser.Password = objUser.Email;
-                objTblUser.Email = objUser.Password;
+                objTblUser.Password = objUser.Password;
+                objTblUser.Email = objUser.Email;
 
                 using (NoteStashDBEntities db = new NoteStashDBEntities())
                 {
