@@ -84,6 +84,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SecurityDriven.Inferno, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inferno.1.4.0\lib\net452\SecurityDriven.Inferno.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -149,9 +153,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NotestashDataAccess\NotestashDataAccess.csproj">
-      <Project>{338F1099-15B9-4A7D-ABAF-14A1464E57E8}</Project>
-      <Name>NotestashDataAccess</Name>
+    <ProjectReference Include="..\NotestashUserDataAccess\NotestashUserDataAccess.csproj">
+      <Project>{7D0E6EEF-4448-4E7D-B42E-A46A01C8EB32}</Project>
+      <Name>NotestashUserDataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

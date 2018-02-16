@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notestash", "Notestash\Notestash.csproj", "{B76B5C79-3081-444E-B938-08367C32822C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotestashDataAccess", "NotestashDataAccess\NotestashDataAccess.csproj", "{338F1099-15B9-4A7D-ABAF-14A1464E57E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotestashUserDataAccess", "NotestashUserDataAccess\NotestashUserDataAccess.csproj", "{7D0E6EEF-4448-4E7D-B42E-A46A01C8EB32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B76B5C79-3081-444E-B938-08367C32822C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B76B5C79-3081-444E-B938-08367C32822C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B76B5C79-3081-444E-B938-08367C32822C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{338F1099-15B9-4A7D-ABAF-14A1464E57E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{338F1099-15B9-4A7D-ABAF-14A1464E57E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{338F1099-15B9-4A7D-ABAF-14A1464E57E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{338F1099-15B9-4A7D-ABAF-14A1464E57E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D0E6EEF-4448-4E7D-B42E-A46A01C8EB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D0E6EEF-4448-4E7D-B42E-A46A01C8EB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D0E6EEF-4448-4E7D-B42E-A46A01C8EB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D0E6EEF-4448-4E7D-B42E-A46A01C8EB32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

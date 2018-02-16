@@ -41,7 +41,9 @@ C:\Projects\Notestash\Notestash\obj\Debug\Notestash.dll
 C:\Projects\Notestash\Notestash\obj\Debug\Notestash.pdb
 C:\Projects\Notestash\Notestash\bin\EntityFramework.dll
 C:\Projects\Notestash\Notestash\bin\EntityFramework.SqlServer.dll
-C:\Projects\Notestash\Notestash\bin\NotestashDataAccess.dll
-C:\Projects\Notestash\Notestash\bin\NotestashDataAccess.pdb
 C:\Projects\Notestash\Notestash\bin\EntityFramework.xml
 C:\Projects\Notestash\Notestash\bin\EntityFramework.SqlServer.xml
+C:\Projects\Notestash\Notestash\bin\SecurityDriven.Inferno.dll
+C:\Projects\Notestash\Notestash\bin\SecurityDriven.Inferno.xml
+C:\Projects\Notestash\Notestash\bin\NotestashUserDataAccess.dll
+C:\Projects\Notestash\Notestash\bin\NotestashUserDataAccess.pdb

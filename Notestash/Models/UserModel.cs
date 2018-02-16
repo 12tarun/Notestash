@@ -4,7 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using NotestashDataAccess;
+using NotestashUserDataAccess;
+using SecurityDriven.Inferno;
+using SecurityDriven.Inferno.Kdf;
+using PBKDF2 = SecurityDriven.Inferno.Kdf.PBKDF2;
+using SecurityDriven.Inferno.Extensions;
+using static SecurityDriven.Inferno.SuiteB;
+using static SecurityDriven.Inferno.Utils;
+
 
 namespace Notestash.Models
 {
@@ -21,17 +28,38 @@ namespace Notestash.Models
 
         public bool Create(UserModel objUser)
         {
+            var sha384Factory = HmacFactory;
+            var random = new CryptoRandom();
+
+            byte[] derivedKey;
+            string hashedPassword = null;
+            string passwordText = objUser.Password;
+
+            byte[] passwordBytes = SafeUTF8.GetBytes(passwordText);
+            var salt = random.NextBytes(384 / 8);
+
+            using (var pbkdf2 = new PBKDF2(sha384Factory, passwordBytes, salt, 256 * 1000))
+                derivedKey = pbkdf2.GetBytes(384 / 8);
+
+
+            using (var hmac = sha384Factory())
+            {
+                hmac.Key = derivedKey;
+                hashedPassword = hmac.ComputeHash(passwordBytes).ToBase16();
+            }
+
             try
             {
-                tblUser objTblUser = new tblUser();
+                tblUserData objTblUser = new tblUserData();
                 objTblUser.Id = objUser.Id;
                 objTblUser.FullName = objUser.FullName;
-                objTblUser.Password = objUser.Password;
+                objTblUser.Password = hashedPassword;
                 objTblUser.Email = objUser.Email;
+                objTblUser.Salt = salt;
 
-                using (NoteStashDBEntities db = new NoteStashDBEntities())
+                using (NotestashUserDataBaseEntities db = new NotestashUserDataBaseEntities())
                 {
-                    db.tblUsers.Add(objTblUser);
+                    db.tblUserDatas.Add(objTblUser);
                     db.SaveChanges();
                 }
 
