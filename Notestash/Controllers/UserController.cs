@@ -21,8 +21,8 @@ namespace Notestash.Controllers
             bool created = ob.Create(objUser);
 
             if (created)
-                return Request.CreateResponse(HttpStatusCode.Created, "Successfully Registered");
-            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Registration Unsuccessful");
+                return Request.CreateResponse(HttpStatusCode.Created, "Successfully Registered!");
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Registration Unsuccessful!");
         }
     }
 }

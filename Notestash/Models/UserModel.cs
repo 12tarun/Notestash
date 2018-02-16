@@ -21,7 +21,13 @@ namespace Notestash.Models
         [Required]
         public string FullName { get; set; }
         [Required]
+        [StringLength(15, MinimumLength = 6, ErrorMessage = "Password should be between 6 to 15 characters!")]
         public string Password { get; set; }
+        [Required]
+        [StringLength(15, MinimumLength = 6, ErrorMessage = "Password should be between 6 to 15 characters!")]
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; }
+
         [Required]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$")]
         public string Email { get; set; }
@@ -59,11 +65,21 @@ namespace Notestash.Models
 
                 using (NotestashUserDataBaseEntities db = new NotestashUserDataBaseEntities())
                 {
-                    db.tblUserDatas.Add(objTblUser);
-                    db.SaveChanges();
-                }
+                    var existingUser = db.tblUserDatas.FirstOrDefault(e => e.Email.Equals(objUser.Email));
 
-                return true;
+                    if (existingUser == null)
+                    {
+                        db.tblUserDatas.Add(objTblUser);
+                        db.SaveChanges();
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
             }
             catch (Exception ex)
             {
